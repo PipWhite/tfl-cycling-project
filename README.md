@@ -34,7 +34,7 @@ Starting with the data table with the cycle and weather data, we first rename th
    `` Av_Temp_Feel_C = `Av Feels Like temp (Celsius)``  
   `)`  
   After changing the column names we can then remove any blank and unwanted columns by selecting on the columns we need.  
-  `select(`
+  `select(`  
   `  Period_F_Year,`  
   `  Start_P,`  
   `  End_P,`  
@@ -54,6 +54,41 @@ Finally we can convert the date columns to the correct data type,
 `mutate(Start_P = as.Date(Start_P, "%d-%b-%y")) %>% 
   mutate(End_P = as.Date(End_P, "%d-%b-%y"))`
 
+  ###Cleaning tfl_cycle_hires (day)
+  This table will show the number of hires daily
+  To clean the cycle hires data table we will first rename the columns.  
+  ``rename(
+    Number_of_Bicycle_hires = `Number of Bicycle Hires...2`
+  )``  
+  Then selecting the appropriate columns.  
+  `select(
+    Day,
+    Number_of_Bicycle_hires
+  )`  
+  And finally changing the appropriate data types.  
+  `mutate(Day = as.Date(Day, "%d/%m/%Y"))`  
+
+  ### Cleaning tfl_cycle_hires (month)
+  This table will show the number of hires per month  
+  Firstly we will change the column names.  
+  `rename(`  
+  ``  Month = `Month...4`,``  
+  ``  Number_of_Bicycle_hires = `Number of Bicycle Hires...5`,``  
+  ``  Avg_Hire_Time_mins = `Average Hire Time (mins)` ``  
+  `)`  
+  Followed by selecting the appropriate columns.  
+  `select(`  
+  `  Month,`  
+  `  Number_of_Bicycle_hires,`  
+  `  Avg_Hire_Time_mins`  
+  `)`  
+  Then we will remove any rows with NA values.  
+  `filter(Month != "NA")`  
+  And finally we convert the appropriate columns to the date data type.  
+  `mutate(Month = as.Date(paste("01", Month), format = "%d %b %y"))`  
+
+  ### Cleaning tfl_cycle_hires (year)
+  
 
 
 
