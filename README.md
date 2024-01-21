@@ -34,20 +34,20 @@ Starting with the data table with the cycle and weather data, we first rename th
    `` Av_Temp_Feel_C = `Av Feels Like temp (Celsius)``  
   `)`  
   After changing the column names we can then remove any blank and unwanted columns by selecting on the columns we need.  
-  ``select(
-    Period_F_Year,  
-    Start_P,  
-    End_P,  
-    Cycle_Count_Index,  
-    Target_Index,  
-    Change_From_Last_Year,  
-    Change_From_Last_Period,  
-    Compared_To_Target,  
-    Current_Rolling_Avg_Compared_Last_year,   
-    Av_Temp_C,  
-    Av_Temp_Feel_C,  
-    `Total Rainfall (mm)`,  
-    `Av Wet Hours per day`) ``  
+  `select(`
+  `  Period_F_Year,`  
+  `  Start_P,`  
+  `  End_P,`  
+  `  Cycle_Count_Index,`  
+  `  Target_Index,`  
+  `  Change_From_Last_Year,`  
+  `  Change_From_Last_Period,`  
+  `  Compared_To_Target,`  
+  `  Current_Rolling_Avg_Compared_Last_year,`   
+  `  Av_Temp_C,`  
+  `  Av_Temp_Feel_C,`  
+  ``  `Total Rainfall (mm)`,``  
+  ``  `Av Wet Hours per day`) ``  
 Then we can filter out any rows with NA values.  
 `filter(Start_P != "NA")`  
 Finally we can convert the date columns to the correct data type,  
