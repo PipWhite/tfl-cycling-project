@@ -107,16 +107,16 @@ Finally we can convert the date columns to the correct data type,
 
   ### Cleaning WalkingCycling (London)
   Firstly we'd like to filter out all of the country regions so we only have data for London.  
-  `WalkingCycling_London <- WalkingCycling[`  
-  `!(WalkingCycling$`Local Authority`== "East Midlands"|`  
-  `    WalkingCycling$`Local Authority`== "East of England"|`  
-  `    WalkingCycling$`Local Authority`== "ENGLAND"|`  
-  `    WalkingCycling$`Local Authority`== "London"|`  
-  `    WalkingCycling$`Local Authority`== "North East"|`        
-  `    WalkingCycling$`Local Authority`== "North West"|`  
-  `    WalkingCycling$`Local Authority`== "South East"|`  
-  `    WalkingCycling$`Local Authority`== "South West"|`  
-  `    WalkingCycling$`Local Authority`== "West Midlands"),`  
+  ``WalkingCycling_London <- WalkingCycling[``  
+  ``!(WalkingCycling$`Local Authority`== "East Midlands"|``  
+  ``    WalkingCycling$`Local Authority`== "East of England"|``  
+  ``    WalkingCycling$`Local Authority`== "ENGLAND"|``  
+  ``    WalkingCycling$`Local Authority`== "London"|``  
+  ``    WalkingCycling$`Local Authority`== "North East"|``        
+  ``    WalkingCycling$`Local Authority`== "North West"|``  
+  ``    WalkingCycling$`Local Authority`== "South East"|``  
+  ``    WalkingCycling$`Local Authority`== "South West"|``  
+  ``    WalkingCycling$`Local Authority`== "West Midlands"),``  
 `]`  
 Them we will select the correct year range.  
 `filter(Year != "2010/11")`  
@@ -124,15 +124,15 @@ Them we will select the correct year range.
 ### Cleaning WalkingCycling (Regions)
 Instead of filtering out the regions we now want to keep them.  
 `WalkingCycling_Regions <- WalkingCycling[`  
-`  (WalkingCycling$`Local Authority`== "East Midlands"|`  
-`     WalkingCycling$`Local Authority`== "East of England"|`  
-`     WalkingCycling$`Local Authority`== "ENGLAND"|`  
-`     WalkingCycling$`Local Authority`== "London"|`  
-`     WalkingCycling$`Local Authority`== "North East"|`        
-`     WalkingCycling$`Local Authority`== "North West"|`  
-`     WalkingCycling$`Local Authority`== "South East"|`  
-`     WalkingCycling$`Local Authority`== "South West"|`  
-`     WalkingCycling$`Local Authority`== "West Midlands"),`  
+``  (WalkingCycling$`Local Authority`== "East Midlands"|``  
+``     WalkingCycling$`Local Authority`== "East of England"|``  
+``     WalkingCycling$`Local Authority`== "ENGLAND"|``  
+``     WalkingCycling$`Local Authority`== "London"|``  
+``     WalkingCycling$`Local Authority`== "North East"|``        
+``     WalkingCycling$`Local Authority`== "North West"|``  
+``     WalkingCycling$`Local Authority`== "South East"|``  
+``     WalkingCycling$`Local Authority`== "South West"|``  
+``     WalkingCycling$`Local Authority`== "West Midlands"),``  
 `]`  
 And once again filtering the correct year range.  
 `filter(Year != "2010/11")`  
